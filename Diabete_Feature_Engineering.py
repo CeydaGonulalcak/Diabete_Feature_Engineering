@@ -32,6 +32,7 @@ pd.set_option('display.float_format', lambda x: '%.3f' % x)
 df = pd.read_csv("datasets/diabetes.csv")
 df.head()
 
+
 def check_df(dataframe, head=5):
     print("##################### Shape #####################")
     print(dataframe.shape)
@@ -255,6 +256,7 @@ df.loc[(df["Glucose"] > 125) & ((df["Age"] >= 21) & (df["Age"] < 50)), "NEW_AGE_
 df.loc[(df["Glucose"] > 125) & (df["Age"] >= 50), "NEW_AGE_GLUCOSE_NOM"] = "highsenior"
 df.head()
 
+
 def set_insulin(dataframe, col_name="Insulin"):
     if 16 <= dataframe[col_name] <= 166:
         return "Normal"
@@ -334,11 +336,3 @@ def plot_importance(model, features, num=len(X), save=False):
 
 plot_importance(rf_model, X)
 
-
-
-
-
-
-
-# Bakılsın
-# [col for col in df.columns if df[col].eq(0).any()]
